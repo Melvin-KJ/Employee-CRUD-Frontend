@@ -72,8 +72,11 @@ function Add() {
             <option value="inactive">Inactive</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary me-2">
           Add
+        </button>
+        <button className="btn btn-dark" onClick={() => navigate('/')}>
+          Back
         </button>
       </form>
     </div>

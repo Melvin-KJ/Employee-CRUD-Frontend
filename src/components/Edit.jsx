@@ -22,7 +22,10 @@ function Edit() {
         console.error('Error fetching employee details', error);
       }
     };
-    getEmployee();
+    if(id){
+      getEmployee();
+    }
+    
   }, [id]);
 
   const handleUsernameChange = (e) => {
@@ -86,9 +89,10 @@ function Edit() {
             <option value="inactive">Inactive</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btn btn-success me-2">
           Update
         </button>
+        <button className='btn btn-dark' onClick={()=>navigate('/')}>Back</button>
       </form>
     </div>
   );

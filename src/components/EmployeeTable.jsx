@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { deleteEmployee } from '../services/api';
 
-function EmployeeTable({ employees }) {
+function EmployeeTable({ employees, onDelete }) {
   const handleDelete = async (id) => {
     try {
       // Delete the employee from the API
@@ -27,9 +27,9 @@ function EmployeeTable({ employees }) {
         </tr>
       </thead>
       <tbody>
-        {employees.map((employee) => (
+        {employees.map((employee,index) => (
           <tr key={employee.id}>
-            <td>{employee.id}</td>
+            <td>{index+1}</td>
             <td>{employee.username}</td>
             <td>{employee.email}</td>
             <td>{employee.status}</td>

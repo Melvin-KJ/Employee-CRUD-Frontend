@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchEmployee } from '../services/api';
 import EmployeeTable from './EmployeeTable';
+import { Link } from 'react-router-dom';
 
 function List() {
   const [employees, setEmployees] = useState([]);
@@ -30,7 +31,9 @@ function List() {
   return (
     <div className="container d-flex flex-column align-items-center mt-4 bg-success text-light">
       <h2 className="mb-4 mt-4 ">Employee List</h2>
-      <EmployeeTable employees={employees} />
+      <Link to="/add">
+      <button className='btn btn-dark mb-2'>Add Employee</button></Link>
+      <EmployeeTable employees={employees} onDelete={handleDelete}/>
     </div>
   );
 }
