@@ -16,7 +16,7 @@ function EmployeeTable({ employees }) {
   };
 
   return (
-    <table>
+    <table className='table table-striped table-bordered'>
       <thead>
         <tr>
           <th>ID</th>
@@ -35,13 +35,13 @@ function EmployeeTable({ employees }) {
             <td>{employee.status}</td>
             <td>
               {/* Edit button */}
-              <Link to={`/edit/${employee.id}`}>
-                <button className="btn btn-primary">Edit</button>
+              <Link className='me-2' to={`/edit/${employee.id}`}>
+                <button className="btn btn-primary btn-sm">Edit</button>
               </Link>
               {/* Delete button */}
               <button
                 onClick={() => handleDelete(employee.id)}
-                className="btn btn-danger"
+                className="btn btn-danger btn-sm"
               >
                 Delete
               </button>
