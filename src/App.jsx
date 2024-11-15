@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './components/List';
+import Add from './components/Add';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
           <Routes>
             {/* { defining route path for different components } */}
             <Route path="/" element={<List />} />
-            {/* <Route path="/add" element={<Add />} /> */}
+            <Route path="/add" element={<Add />} />
             {/* <Route path="/edit/:id" element={<Edit />} /> */}
           </Routes>
         </div>

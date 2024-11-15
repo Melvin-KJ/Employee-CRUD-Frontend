@@ -21,8 +21,8 @@ function List() {
   }, []);
 
   return (
-    <div className='container d-flex flex-column align-items-center mt-4'>
-      <h2 className='mb-4'>Employee List</h2>
+    <div className='container d-flex flex-column align-items-center mt-4 bg-success text-light'>
+      <h2 className='mb-4 mt-4 '>Employee List</h2>
       <EmployeeTable employees={employees}/>
     </div>
   );
