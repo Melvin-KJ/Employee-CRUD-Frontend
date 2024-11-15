@@ -8,8 +8,8 @@ function EmployeeTable({ employees }) {
       // Delete the employee from the API
       await deleteEmployee(id);
       alert('Employee deleted successfully!');
-      //reload
-      window.location.reload();
+      //update the employee list in  parent component's state
+      onDelete(id);
     } catch (error) {
       console.error('Error deleting employee', error);
     }

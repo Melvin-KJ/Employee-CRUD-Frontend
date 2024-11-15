@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './components/List';
 import Add from './components/Add';
+import Edit from './components/Edit';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
             {/* { defining route path for different components } */}
             <Route path="/" element={<List />} />
             <Route path="/add" element={<Add />} />
-            {/* <Route path="/edit/:id" element={<Edit />} /> */}
+            <Route path="/edit/:id" element={<Edit />} />
           </Routes>
         </div>
       </BrowserRouter>

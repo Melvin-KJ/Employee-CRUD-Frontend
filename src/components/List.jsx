@@ -20,10 +20,17 @@ function List() {
     getEmployee();
   }, []);
 
+  //Function to remove an employee from the state
+  const handleDelete = (id) => {
+    setEmployees((prevEmployees) =>
+      prevEmployees.filter((employee) => employee.id !== id)
+    );
+  };
+
   return (
-    <div className='container d-flex flex-column align-items-center mt-4 bg-success text-light'>
-      <h2 className='mb-4 mt-4 '>Employee List</h2>
-      <EmployeeTable employees={employees}/>
+    <div className="container d-flex flex-column align-items-center mt-4 bg-success text-light">
+      <h2 className="mb-4 mt-4 ">Employee List</h2>
+      <EmployeeTable employees={employees} />
     </div>
   );
 }
