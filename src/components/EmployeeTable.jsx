@@ -1,0 +1,56 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { deleteEmployee } from '../services/api';
+
+function EmployeeTable({ employees }) {
+  const handleDelete = async (id) => {
+    try {
+      // Delete the employee from the API
+      await deleteEmployee(id);
+      alert('Employee deleted successfully!');
+      //reload
+      window.location.reload();
+    } catch (error) {
+      console.error('Error deleting employee', error);
+    }
+  };
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {employees.map((employee) => (
+          <tr key={employee.id}>
+            <td>{employee.id}</td>
+            <td>{employee.username}</td>
+            <td>{employee.email}</td>
+            <td>{employee.status}</td>
+            <td>
+              {/* Edit button */}
+              <Link to={`/edit/${employee.id}`}>
+                <button className="btn btn-primary">Edit</button>
+              </Link>
+              {/* Delete button */}
+              <button
+                onClick={() => handleDelete(employee.id)}
+                className="btn btn-danger"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+export default EmployeeTable;
